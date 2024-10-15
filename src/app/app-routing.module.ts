@@ -9,6 +9,27 @@ const routes: Routes = [];
 })
 export class AppRoutingModule { }
 
+
+interface Route {
+  title?: string | Type<Resolve<string>> | ResolveFn<string>;
+  path?: string;
+  pathMatch?: "prefix" | "full";
+  matcher?: UrlMatcher;
+  component?: Type<any>;
+  loadComponent?: () => Type<unknown> | Observable<Type<unknown> | DefaultExport<Type<unknown>>> | Promise<Type<unknown> | DefaultExport<Type<unknown>>>;
+  redirectTo?: string | RedirectFunction;
+  outlet?: string;
+  canActivate?: any[];
+  canMatch?: any[];
+  canActivateChild?: any[];
+  canDeactivate?: any[];
+  canLoad?: any[];
+  data?: Data;
+  resolve?: ResolveData;
+  children?: Routes;
+  loadChildren?: LoadChildrenCallback;
+  runGuardsAndResolvers?: RunGuardsAndResolvers;
+  providers?: (EnvironmentProviders | Provider)[];
 {
   "angularCompilerOptions": {
     "extendedDiagnostics": {
